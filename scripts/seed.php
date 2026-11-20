@@ -1,10 +1,10 @@
 <?php
 /**
- * Run with wp eval-file scripts/seed.php from a dedicated demo installation.
+ * Run with wp eval-file scripts/seed.php from a dedicated local installation.
  */
 
 if (!class_exists('WooCommerce') || 'stillmere' !== get_stylesheet() || !in_array('stillmere-demo/stillmere-demo.php', get_option('active_plugins', []), true)) {
-    WP_CLI::error('Activate WooCommerce, Stillmere Demo Mode, and the Stillmere House theme first.');
+    WP_CLI::error('Activate WooCommerce, Stillmere Offline Checkout, and the Stillmere House theme first.');
 }
 
 $project = dirname(__DIR__);
@@ -16,7 +16,7 @@ function stillmere_seed_page(string $slug, string $title, string $content, strin
     $assigned_id = $option ? (int) get_option($option) : 0;
     $page = $assigned_id ? get_post($assigned_id) : get_page_by_path($slug);
     if ($page && ('page' !== $page->post_type || ($page->ID !== $assigned_id && !get_post_meta($page->ID, '_stillmere_seed', true)))) {
-        WP_CLI::error("A page with slug {$slug} belongs to another setup. Use a fresh demo installation.");
+        WP_CLI::error("A page with slug {$slug} belongs to another setup. Use a fresh WordPress installation.");
     }
     if ($page && get_post_meta($page->ID, '_stillmere_seed', true)) {
         return $page->ID;
@@ -111,21 +111,21 @@ foreach ([
 
 update_option('woocommerce_cod_settings', [
     'enabled' => 'yes',
-    'title' => 'Cash on delivery (demo)',
-    'description' => 'Offline test checkout. Use fictional details. No payment or delivery will take place.',
-    'instructions' => 'Your demo order was saved locally. No payment is due.',
+    'title' => 'Cash on delivery',
+    'description' => 'This is a test checkout. Use sample details. No payment or delivery will take place.',
+    'instructions' => 'Your test order was saved. No payment is due.',
     'enable_for_methods' => [],
     'enable_for_virtual' => 'no',
 ]);
 
-$demo_zone_id = 0;
+$store_zone_id = 0;
 foreach (WC_Shipping_Zones::get_zones() as $zone_data) {
     if ('Stillmere United States' === $zone_data['zone_name']) {
-        $demo_zone_id = $zone_data['zone_id'];
+        $store_zone_id = $zone_data['zone_id'];
         break;
     }
 }
-$zone = new WC_Shipping_Zone($demo_zone_id);
+$zone = new WC_Shipping_Zone($store_zone_id);
 $zone->set_zone_name('Stillmere United States');
 $zone->set_zone_order(0);
 $zone->set_locations([['code' => 'US', 'type' => 'country']]);
@@ -149,7 +149,7 @@ foreach ($catalog as $position => $record) {
     $existing_id = wc_get_product_id_by_sku($record['sku']);
     $variable = isset($record['options']);
     if ($existing_id && !get_post_meta($existing_id, '_stillmere_seed', true)) {
-        WP_CLI::error('A product already uses demo SKU ' . $record['sku']);
+        WP_CLI::error('A product already uses fixture SKU ' . $record['sku']);
     }
     $product = $existing_id
         ? wc_get_product($existing_id)

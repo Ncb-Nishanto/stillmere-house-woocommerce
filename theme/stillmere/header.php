@@ -9,7 +9,7 @@
 <?php wp_body_open(); ?>
 <a class="st-skip" href="#main">Skip to content</a>
 <header class="st-header">
-    <p class="st-announcement">Demo shop · $6 flat-rate U.S. shipping</p>
+    <p class="st-announcement">$6 flat-rate U.S. shipping</p>
     <div class="st-wrap st-header-row">
         <a class="st-brand" href="<?php echo esc_url(home_url('/')); ?>">
             <svg viewBox="0 0 36 36" fill="none" aria-hidden="true">

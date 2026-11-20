@@ -1,21 +1,29 @@
 # Stillmere House
 
-Stillmere House is a fictional homewares store built with WordPress, WooCommerce, and a custom classic theme. The collection includes six physical products across Table, Home, and Bath. The Oat Stoneware Cup has two independently priced and stocked variations.
+**Homewares storefront · WordPress and WooCommerce**
 
-## Portfolio walkthrough
+Stillmere House brings a collection of stoneware, linen, and oak into an online shop. Shoppers can browse six products across Table, Home, and Bath, choose a cup pack size, then review quantities and shipping before checkout.
 
-1. Start on the homepage and open **Shop the collection**. Browse the shop and open **Oat Stoneware Cup**.
-2. Choose **Single cup** ($18) or **Set of two** ($32). Add one to the cart and use **Update cart** to change the quantity. The test fixture offers $6 standard U.S. shipping.
-3. Proceed to checkout as a guest. Use fictional details such as Taylor Example, 100 Demo Way, Portland, OR 97201, and `taylor@example.test`. Select **Cash on delivery (demo)** and place the order.
-4. View the order confirmation, then open **WooCommerce → Orders** to inspect the test order, payment method, variation, and quantities. A test checkout uses WooCommerce’s actual order and stock APIs. The demo gateway collects no payment and the local demo sends no email.
-5. Open the Home page in the WordPress block editor and the cup in the WooCommerce product editor to show how the content and catalog can be edited.
+![Stillmere House homepage](screenshots/desktop-home.png)
+
+## Project brief
+
+Give a small homewares collection an editorial storefront with clear product choices and a straightforward guest checkout. Keep catalog and stock management in WooCommerce so the store can be maintained from WordPress.
+
+## Implementation
+
+- A custom storefront theme styles the homepage, catalog, product pages, cart, and checkout. The homepage is editable in the WordPress block editor.
+- The Oat Stoneware Cup offers a **Single cup** at $18 and a **Set of two** at $32. WooCommerce tracks pricing and stock for each pack independently.
+- The cart supports quantity updates and calculates $6 standard U.S. shipping. Guest checkout creates a WooCommerce order and updates inventory using the offline Cash on Delivery gateway.
+
+This is an independent portfolio project for a fictional homewares brand. Checkout is configured for test orders.
 
 ## Run locally
 
 Create a fresh local WordPress installation with PHP 8.1+ and MySQL or MariaDB. Check that your local server supports pretty permalinks. Set `PROJECT` to the absolute path of this checkout and run the following with WP-CLI from the WordPress root. On Windows, use Git Bash or copy the two directories with File Explorer and then run the WP-CLI commands.
 
 ```sh
-PROJECT="/absolute/path/to/home-lifestyle-woocommerce-demo"
+PROJECT="/absolute/path/to/stillmere-house-woocommerce"
 cp -R "$PROJECT/theme/stillmere" wp-content/themes/
 cp -R "$PROJECT/plugins/stillmere-demo" wp-content/plugins/
 wp plugin install woocommerce --activate
@@ -24,9 +32,11 @@ wp theme activate stillmere
 wp eval-file "$PROJECT/scripts/seed.php"
 ```
 
-Open the URL printed by the seed script. The script builds the pages and catalog, attaches local images, and sets the shop currency, U.S. shipping, guest checkout, and offline gateway. It leaves previously seeded page and product content in place on a rerun. Store-level demo settings are applied each time.
+Open the URL printed by the seed script. The script builds the pages and catalog, attaches local images, and sets the shop currency, U.S. shipping, guest checkout, and offline gateway. It leaves previously seeded page and product content in place on a rerun. Store settings are applied each time.
 
-Use a dedicated install. The demo plugin permits only WooCommerce’s Cash on Delivery gateway and suppresses outbound WordPress mail. The cart and checkout use WooCommerce’s supported classic shortcodes and templates. No payment service, external theme, or paid extension is required.
+Use a dedicated install. The offline checkout plugin permits only WooCommerce’s Cash on Delivery gateway and suppresses outbound WordPress mail. The cart and checkout use WooCommerce’s supported classic shortcodes and templates.
+
+To test checkout, add the **Set of two** cup variation, change the cart quantity to two, and check out as a guest using sample details such as Taylor Example, 100 Sample Way, Portland, OR 97201, and `taylor@example.test`. Choose **Cash on delivery**. Confirm the $70.00 total and check the saved order under **WooCommerce → Orders**.
 
 ## Verification
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Stillmere Demo Mode
+ * Plugin Name: Stillmere Offline Checkout
  * Description: Keeps Stillmere checkout offline-only and disables outbound mail.
  * Version: 1.0.0
  * Requires PHP: 8.1
