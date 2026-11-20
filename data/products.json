@@ -1,0 +1,76 @@
+[
+  {
+    "sku": "ST-CUP",
+    "slug": "oat-stoneware-cup",
+    "name": "Oat Stoneware Cup",
+    "category": "Table",
+    "image": "oat-cup.jpg",
+    "alt": "An oatmeal-glazed stoneware cup with a rounded handle",
+    "summary": "A softly rounded 9 oz stoneware cup with a comfortable bridge handle and an oat glaze.",
+    "description": "Sized for coffee, tea, or a small pour of cocoa. The cup has a smooth glazed interior and a lightly textured exterior. Choose one cup or a matching set of two. Dishwasher safe.",
+    "options": [
+      {"sku": "ST-CUP-1", "name": "Single cup", "price": "18.00", "stock": 24},
+      {"sku": "ST-CUP-2", "name": "Set of two", "price": "32.00", "stock": 18}
+    ]
+  },
+  {
+    "sku": "ST-LINEN",
+    "slug": "flax-table-runner",
+    "name": "Flax Table Runner",
+    "category": "Table",
+    "image": "flax-runner.jpg",
+    "alt": "A folded natural-flax linen runner with a short fringe",
+    "summary": "Washed flax linen with a soft fringe. Measures 16 × 70 inches.",
+    "description": "Lay the runner lengthwise on a dining table or across a breakfast nook. The softly washed texture works with everyday stoneware and natural wood. Machine wash cold and line dry.",
+    "price": "38.00",
+    "stock": 20
+  },
+  {
+    "sku": "ST-PITCH",
+    "slug": "moss-stoneware-pitcher",
+    "name": "Moss Stoneware Pitcher",
+    "category": "Table",
+    "image": "moss-pitcher.jpg",
+    "alt": "A matte moss-green pitcher with a curved handle",
+    "summary": "A matte green 34 oz pitcher with a steady handle and a tapered pouring lip.",
+    "description": "Use it for water, iced tea, or a few stems from the garden. The glazed interior rinses clean after use. Hand washing is recommended.",
+    "price": "54.00",
+    "stock": 14
+  },
+  {
+    "sku": "ST-CANDLE",
+    "slug": "amber-cedar-candle",
+    "name": "Amber Cedar Candle",
+    "category": "Home",
+    "image": "amber-candle.jpg",
+    "alt": "An amber glass candle with pale wax and a single cotton wick",
+    "summary": "A 6 oz soy wax candle with cedarwood, dry amber, and a soft citrus note.",
+    "description": "Poured into a simple amber glass jar with a cotton wick. Trim the wick to ¼ inch before lighting and burn on a stable, heat-resistant surface.",
+    "price": "24.00",
+    "stock": 32
+  },
+  {
+    "sku": "ST-TRAY",
+    "slug": "oak-catchall-tray",
+    "name": "Oak Catchall Tray",
+    "category": "Home",
+    "image": "oak-tray.jpg",
+    "alt": "An oval oak tray showing its shallow rim and natural grain",
+    "summary": "An oval solid-oak tray with a shallow rim. Measures 9 × 5 inches.",
+    "description": "A resting spot for keys in the entryway or rings by the bedside. A clear oil finish brings out the grain. Wipe clean with a lightly damp cloth.",
+    "price": "28.00",
+    "stock": 19
+  },
+  {
+    "sku": "ST-TOWEL",
+    "slug": "moss-waffle-hand-towel",
+    "name": "Moss Waffle Hand Towel",
+    "category": "Bath",
+    "image": "moss-towel.jpg",
+    "alt": "A folded moss-green waffle-weave cotton hand towel",
+    "summary": "A quick-drying cotton waffle towel with a hanging loop. Measures 18 × 28 inches.",
+    "description": "The open waffle weave adds texture without bulk. Hang it by the loop after use. Machine wash warm with like colors and tumble dry low.",
+    "price": "22.00",
+    "stock": 25
+  }
+]
